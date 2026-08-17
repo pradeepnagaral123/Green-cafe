@@ -1890,6 +1890,8 @@ section {
   }
   .hero-content {
     padding-bottom: 0;
+    text-align: center;
+    margin-inline: auto;
   }
   .hero-badge {
     font-size: 0.58rem;
@@ -1903,7 +1905,6 @@ section {
     line-height: 1.08;
   }
   .hero-title-accent {
-    color: var(--cream);
     text-shadow: none;
   }
   .hero-sub {
