@@ -1915,6 +1915,7 @@ section {
   .hero-actions {
     gap: 8px;
     margin-top: 12px;
+    justify-content: center;
   }
   .hero-actions .btn {
     padding: 10px 16px;
@@ -1929,6 +1930,7 @@ section {
   .hero-meta {
     gap: 4px;
     margin-top: 10px;
+    align-items: center;
   }
   .hero-meta-item {
     font-size: 0.72rem;
