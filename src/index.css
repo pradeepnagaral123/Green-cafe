@@ -215,8 +215,9 @@ section {
 }
 
 .navbar-scrolled {
-  background: rgba(6, 17, 12, 0.82);
+  background: rgba(6, 17, 12, 0.95);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(184, 242, 104, 0.08);
   padding: 10px 0;
@@ -272,6 +273,8 @@ section {
   align-items: center;
   gap: 30px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a:not(.btn) {
@@ -315,7 +318,7 @@ section {
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.4px;
-  padding: 11px 24px;
+  padding: 13px 24px;
   box-shadow: 0 8px 26px rgba(184, 242, 104, 0.28);
   border: 1px solid transparent;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
@@ -797,7 +800,7 @@ section {
 .specialty-card-tag {
   display: inline-block;
   font-family: var(--font-grotesk);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 1.8px;
   text-transform: uppercase;
@@ -1138,6 +1141,11 @@ section {
 .gallery-btn:hover .gallery-overlay {
   opacity: 1;
 }
+@media (hover: none) and (pointer: coarse) {
+  .gallery-overlay {
+    opacity: 0.65;
+  }
+}
 .gallery-overlay strong {
   font-size: 1.05rem;
 }
@@ -1150,7 +1158,7 @@ section {
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 2000;
+  z-index: 2500;
   background: rgba(0, 0, 0, 0.92);
   display: grid;
   place-items: center;
@@ -1424,8 +1432,8 @@ section {
   top: 16px;
   right: 16px;
   z-index: 2;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(6, 14, 12, 0.75);
@@ -1722,14 +1730,17 @@ section {
     inset: 0;
     background: rgba(6, 17, 12, 0.97);
     backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 24px;
+    padding: 60px 20px 40px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-20px);
     transition: all 0.35s ease;
-    z-index: 1050;
+    z-index: 9999;
   }
   .nav-links.nav-open {
     opacity: 1;
@@ -1738,6 +1749,12 @@ section {
   }
   .nav-links a:not(.btn) {
     font-size: 1.35rem;
+    padding: 14px 0;
+  }
+  .navbar {
+    background: rgba(6, 17, 12, 0.95);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
   }
   .nav-cta-wrap {
     display: block;
@@ -1760,14 +1777,42 @@ section {
   }
 
   .t-card {
-    width: 78vw;
+    width: 68vw;
+    padding: 24px 20px;
+    margin-right: 16px;
+  }
+  .t-quote {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 8px 0 14px;
+  }
+  .t-avatar {
+    width: 42px;
+    height: 42px;
+  }
+  .t-person strong {
+    font-size: 0.88rem;
+  }
+  .t-person small {
+    font-size: 0.78rem;
+  }
+  .t-stars {
+    margin-top: 12px;
+    font-size: 0.85rem;
   }
   .about-grid,
   .reservation-grid {
     grid-template-columns: 1fr;
+    gap: 36px;
   }
   .about-media {
     max-width: 520px;
+  }
+  .about-img-main {
+    height: 300px;
+  }
+  .about-img-small {
+    height: 170px;
   }
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1778,9 +1823,10 @@ section {
 }
 
 @media (max-width: 600px) {
-  .hero {
-    min-height: 0;
+  .section-head {
+    margin-bottom: 28px;
   }
+
   .hero-bg {
     left: 0;
     opacity: 0.92;
@@ -1793,61 +1839,75 @@ section {
       rgba(6, 16, 11, 0.95) 100%
     );
   }
+  .hero {
+    overflow: hidden;
+  }
   .hero-main {
-    padding-top: 118px;
+    flex: 1;
+    min-height: 0;
+    padding-top: 72px;
+    padding-bottom: 0;
   }
   .hero-content {
-    padding-bottom: 40px;
+    padding-bottom: 0;
   }
   .hero-badge {
-    font-size: 0.66rem;
-    letter-spacing: 1.8px;
-    padding: 8px 15px;
+    font-size: 0.62rem;
+    letter-spacing: 1.6px;
+    padding: 6px 12px;
+    margin-bottom: 10px;
   }
   .hero-title {
-    font-size: 2.4rem;
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
     line-height: 1.08;
   }
   .hero-sub {
-    font-size: 0.98rem;
-    margin-top: 16px;
-    line-height: 1.65;
+    font-size: 0.88rem;
+    margin-top: 8px;
+    line-height: 1.5;
   }
   .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 10px;
+    margin-top: 16px;
   }
   .hero-actions .btn {
-    width: min(100%, 340px);
+    padding: 11px 20px;
+    font-size: 0.82rem;
   }
   .hero-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 26px;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .hero-meta-item {
+    font-size: 0.78rem;
   }
   .hero-meta-sep {
     display: none;
   }
   .hero-stats {
-    padding: 0 0 34px;
+    flex-shrink: 0;
+    padding: 0 0 14px;
   }
   .hero-stats-inner {
     grid-template-columns: repeat(2, 1fr);
-    border-radius: 20px;
+    border-radius: 14px;
   }
   .hero-stat {
-    padding: 18px 16px;
-    gap: 13px;
+    padding: 12px 12px;
+    gap: 10px;
   }
   .hero-stat-icon {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
   }
   .hero-stat strong {
-    font-size: 1.45rem;
+    font-size: 1.2rem;
+  }
+  .hero-stat-label {
+    font-size: 0.55rem;
+  }
+  .hero-stat small {
+    font-size: 0.68rem;
   }
   .hero-stat:nth-child(2) {
     border-right: none;
@@ -1856,8 +1916,52 @@ section {
     border-bottom: 1px solid rgba(246, 241, 231, 0.08);
   }
 
+  .about {
+    padding: 60px 0;
+  }
+  .about-img-main {
+    height: 240px;
+  }
+  .about-img-small {
+    height: 140px;
+  }
+
+  .menu {
+    padding: 60px 0;
+  }
+  .menu-tab {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+  }
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    padding: 60px 0;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .testimonials {
+    padding: 60px 0;
+  }
+
+  .reservation {
+    padding: 60px 0;
+  }
+  .reservation-card {
+    padding: 26px 20px;
+  }
+
+  .contact {
+    padding: 60px 0;
+  }
+
   .specialties {
-    padding: 80px 0;
+    padding: 60px 0;
   }
   .specialties-cards {
     grid-template-columns: 1fr;
@@ -1875,12 +1979,17 @@ section {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding-bottom: 80px;
   }
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
+
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
   }
-  .reservation-card {
-    padding: 26px 20px;
+  .back-top {
+    bottom: 20px;
+    left: 20px;
   }
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { NAV_LINKS, SITE } from '../data/site'
 
 function LeafLogo() {
@@ -47,6 +48,11 @@ export default function Navbar({ onReserve }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-inner">
@@ -58,6 +64,22 @@ export default function Navbar({ onReserve }) {
           </span>
         </a>
 
+        <button type="button" className="btn nav-reserve nav-cta" onClick={onReserve}>
+          Reserve a Table
+        </button>
+
+        <button
+          className={`hamburger-circle ${open ? 'hamburger-open' : ''}`}
+          aria-label="Toggle menu"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      {createPortal(
         <ul className={`nav-links ${open ? 'nav-open' : ''}`}>
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
@@ -82,25 +104,9 @@ export default function Navbar({ onReserve }) {
               Reserve a Table
             </button>
           </li>
-        </ul>
-
-        <button type="button" className="btn nav-reserve nav-cta" onClick={onReserve}>
-          Reserve a Table
-        </button>
-
-        <button
-          className={`hamburger-circle ${open ? 'hamburger-open' : ''}`}
-          aria-label="Toggle menu"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
-      <a href={SITE.phone.replace(' ', '')} className="navbar-call">
-        📞 {SITE.phone}
-      </a>
+        </ul>,
+        document.body
+      )}
     </nav>
   )
 }
