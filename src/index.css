@@ -1725,12 +1725,13 @@ section {
 }
 
 @media (max-width: 900px) {
-  .nav-links {
+  .nav-overlay {
     position: fixed;
     inset: 0;
     background: rgba(6, 17, 12, 0.97);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1742,12 +1743,42 @@ section {
     transition: all 0.35s ease;
     z-index: 9999;
   }
-  .nav-links.nav-open {
+  .nav-overlay.nav-open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
-  .nav-links a:not(.btn) {
+  .nav-overlay-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .nav-overlay-close:hover {
+    background: var(--green);
+    color: #06281c;
+    transform: rotate(90deg);
+  }
+  .nav-overlay-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-overlay-links a:not(.btn) {
     font-size: 1.35rem;
     padding: 14px 0;
   }

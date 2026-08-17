@@ -80,31 +80,40 @@ export default function Navbar({ onReserve }) {
       </div>
 
       {createPortal(
-        <ul className={`nav-links ${open ? 'nav-open' : ''}`}>
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={active === link.href.slice(1) ? 'active' : ''}
-                onClick={() => setOpen(false)}
+        <div className={`nav-overlay ${open ? 'nav-open' : ''}`}>
+          <button
+            className="nav-overlay-close"
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+          >
+            ✕
+          </button>
+          <ul className="nav-overlay-links">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={active === link.href.slice(1) ? 'active' : ''}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+            <li className="nav-cta-wrap">
+              <button
+                type="button"
+                className="btn nav-reserve"
+                onClick={() => {
+                  setOpen(false)
+                  onReserve()
+                }}
               >
-                {link.label}
-              </a>
+                Reserve a Table
+              </button>
             </li>
-          ))}
-          <li className="nav-cta-wrap">
-            <button
-              type="button"
-              className="btn nav-reserve"
-              onClick={() => {
-                setOpen(false)
-                onReserve()
-              }}
-            >
-              Reserve a Table
-            </button>
-          </li>
-        </ul>,
+          </ul>
+        </div>,
         document.body
       )}
     </nav>
