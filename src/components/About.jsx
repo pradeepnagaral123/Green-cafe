@@ -1,5 +1,6 @@
 import Reveal from './Reveal'
 import { FEATURES } from '../data/site'
+import Icon from './Icon'
 
 export default function About() {
   return (
@@ -35,7 +36,9 @@ export default function About() {
             <div className="features">
               {FEATURES.map((f) => (
                 <div key={f.title} className="feature">
-                  <span className="feature-icon">{f.icon}</span>
+                  <span className="feature-icon">
+                    <Icon name={f.icon} size={22} />
+                  </span>
                   <div>
                     <h4>{f.title}</h4>
                     <p>{f.text}</p>

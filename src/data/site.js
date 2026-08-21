@@ -78,17 +78,17 @@ export const SPECIALTIES = [
 
 export const FEATURES = [
   {
-    icon: '🏛️',
+    icon: 'landmark',
     title: 'Heritage Bungalow',
     text: 'Dine inside a restored Portuguese bungalow with old-world character.',
   },
   {
-    icon: '🌿',
+    icon: 'leaf',
     title: 'Lush Garden Seating',
     text: 'Break out of the city into greenery, fairy lights and cool evening air.',
   },
   {
-    icon: '☕',
+    icon: 'cup',
     title: 'Handcrafted Brews',
     text: 'Every cup and cocktail is made fresh, in-house, by our team.',
   },

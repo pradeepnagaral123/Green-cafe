@@ -1,5 +1,6 @@
 import Reveal from './Reveal'
 import { SPECIALTIES } from '../data/site'
+import Icon from './Icon'
 
 export default function Specialties() {
   return (
@@ -7,7 +8,9 @@ export default function Specialties() {
       <div className="container">
         <div className="specialties-grid">
           <Reveal className="specialties-head">
-            <span className="specialties-eyebrow">🌿 Our Specialties</span>
+            <span className="specialties-eyebrow">
+              <Icon name="leaf" size={14} /> Our Specialties
+            </span>
             <h2 className="specialties-title">
               Handcrafted with Love,
               <br />

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { SITE } from '../data/site'
+import Icon from './Icon'
 
 const initialForm = { name: '', phone: '', date: '', time: '', guests: '2 People' }
 
@@ -86,7 +87,7 @@ export default function BookingForm() {
       </div>
 
       <button type="submit" className="btn btn-primary btn-block">
-        💬 Book via WhatsApp
+        <Icon name="message" size={16} /> Book via WhatsApp
       </button>
       <small className="form-note">
         You&apos;ll be redirected to WhatsApp with your details pre-filled.

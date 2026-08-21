@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { categories } from '../data/menu'
 import Reveal from './Reveal'
+import Icon from './Icon'
 
 function formatPrice(price) {
   return `₹${price}`
@@ -29,7 +30,9 @@ export default function Menu() {
               className={`menu-tab ${active === c.id ? 'active' : ''}`}
               onClick={() => setActive(c.id)}
             >
-              <span className="menu-tab-icon">{c.icon}</span>
+              <span className="menu-tab-icon">
+                <Icon name={c.icon} size={16} />
+              </span>
               {c.label}
             </button>
           ))}
@@ -37,14 +40,19 @@ export default function Menu() {
 
         <div className="menu-panel" key={current.id}>
           <Reveal className="menu-tagline">
-            <span>{current.icon}</span> {current.tagline}
+            <span className="menu-tagline-icon">
+              <Icon name={current.icon} size={15} />
+            </span>{' '}
+            {current.tagline}
           </Reveal>
           <div className="menu-grid">
             {current.items.map((item) => (
               <article key={item.name} className="menu-card">
                 <div className="menu-card-media">
                   <img src={item.image} alt={item.name} loading="lazy" />
-                  <span className="menu-card-emoji" aria-hidden="true">{item.emoji}</span>
+                  <span className="menu-card-emoji" aria-hidden="true">
+                    <Icon name={item.icon} size={18} />
+                  </span>
                 </div>
                 <div className="menu-card-body">
                   <div className="menu-card-top">

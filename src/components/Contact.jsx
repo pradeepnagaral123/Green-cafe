@@ -1,5 +1,6 @@
 import { SITE } from '../data/site'
 import Reveal from './Reveal'
+import Icon from './Icon'
 
 export default function Contact() {
   return (
@@ -13,14 +14,18 @@ export default function Contact() {
         <div className="contact-grid">
           <Reveal className="contact-cards">
             <div className="contact-card">
-              <span className="contact-icon">📍</span>
+              <span className="contact-icon">
+                <Icon name="map-pin" size={22} />
+              </span>
               <div>
                 <h4>Visit Us</h4>
                 <p>{SITE.address}</p>
               </div>
             </div>
             <div className="contact-card">
-              <span className="contact-icon">📞</span>
+              <span className="contact-icon">
+                <Icon name="phone" size={22} />
+              </span>
               <div>
                 <h4>Call Us</h4>
                 <p>
@@ -29,14 +34,18 @@ export default function Contact() {
               </div>
             </div>
             <div className="contact-card">
-              <span className="contact-icon">🕙</span>
+              <span className="contact-icon">
+                <Icon name="clock" size={22} />
+              </span>
               <div>
                 <h4>Opening Hours</h4>
                 <p>{SITE.hours}</p>
               </div>
             </div>
             <div className="contact-card">
-              <span className="contact-icon">💬</span>
+              <span className="contact-icon">
+                <Icon name="message" size={22} />
+              </span>
               <div>
                 <h4>WhatsApp</h4>
                 <p>

@@ -1,6 +1,7 @@
 import { SITE } from '../data/site'
 import Reveal from './Reveal'
 import BookingForm from './BookingForm'
+import Icon from './Icon'
 
 export default function Reservation() {
   return (
@@ -15,14 +16,20 @@ export default function Reservation() {
               fairy lights ready when you arrive.
             </p>
             <ul className="reservation-points">
-              <li>✅ Instant confirmation on WhatsApp</li>
-              <li>✅ Ideal for dates, families &amp; groups</li>
-              <li>✅ Walk-ins welcome, subject to availability</li>
+              <li>
+                <Icon name="check" size={16} /> Instant confirmation on WhatsApp
+              </li>
+              <li>
+                <Icon name="check" size={16} /> Ideal for dates, families &amp; groups
+              </li>
+              <li>
+                <Icon name="check" size={16} /> Walk-ins welcome, subject to availability
+              </li>
             </ul>
             <div className="reservation-call">
               <span>Prefer to call?</span>
               <a href={`tel:${SITE.phone.replace(' ', '')}`} className="btn btn-outline">
-                📞 {SITE.phone}
+                <Icon name="phone" size={16} /> {SITE.phone}
               </a>
             </div>
           </Reveal>
