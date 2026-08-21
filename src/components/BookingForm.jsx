@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { SITE } from '../data/site'
 import Icon from './Icon'
+import DatePicker from './DatePicker'
 
 const initialForm = { name: '', phone: '', date: '', time: '', guests: '2 People' }
 
@@ -65,7 +66,12 @@ export default function BookingForm() {
       <div className="field-row">
         <div className="field">
           <label htmlFor="r-date">Date</label>
-          <input id="r-date" type="date" value={form.date} onChange={set('date')} />
+          <DatePicker
+            id="r-date"
+            value={form.date}
+            onChange={(date) => setForm((f) => ({ ...f, date }))}
+            placeholder="Pick a date"
+          />
           {errors.date && <small className="field-error">{errors.date}</small>}
         </div>
         <div className="field">
