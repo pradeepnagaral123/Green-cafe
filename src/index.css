@@ -403,7 +403,7 @@ section {
   right: 0;
   bottom: 0;
   left: 40%;
-  background: url('/images/hero.png') center/cover no-repeat;
+  background: url('/images/hero.webp') center/cover no-repeat;
   -webkit-mask-image: linear-gradient(to left, black 55%, transparent 100%);
   mask-image: linear-gradient(to left, black 55%, transparent 100%);
   animation: heroZoom 18s ease-in-out infinite alternate;
