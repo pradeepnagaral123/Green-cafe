@@ -9,10 +9,10 @@ export default function About() {
         <div className="about-grid">
           <Reveal className="about-media">
             <div className="about-img about-img-main">
-              <img src="/images/entrance1.jpg" alt="Portuguese entrance of Green Gates Café" loading="lazy" />
+              <img src="/images/entrance1.webp" alt="Portuguese entrance of Green Gates Café" loading="lazy" />
             </div>
             <div className="about-img about-img-small">
-              <img src="/images/ambience1.jpg" alt="Garden walkway" loading="lazy" />
+              <img src="/images/ambience1.webp" alt="Garden walkway" loading="lazy" />
             </div>
             <div className="about-badge">
               <strong>Est. Heritage</strong>

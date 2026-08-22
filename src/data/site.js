@@ -51,25 +51,25 @@ export const STATS = [
 
 export const SPECIALTIES = [
   {
-    img: '/images/menu/bruschetta.jpg',
+    img: '/images/menu/bruschetta.webp',
     tag: 'Fresh From The Oven',
     title: 'Wood-Fired Pizza',
     text: 'Chargrilled edges, molten cheese and garden-fresh toppings.',
   },
   {
-    img: '/images/menu/orange-mojito.jpg',
+    img: '/images/menu/orange-mojito.webp',
     tag: 'Zesty & Cooling',
     title: 'Citrus Mint Cooler',
     text: 'Muddled mint, citrus and crushed ice — made in-house.',
   },
   {
-    img: '/images/menu/sizzling-brownie.jpg',
+    img: '/images/menu/sizzling-brownie.webp',
     tag: 'Warm & Gooey',
     title: 'Brownie & Ice Cream',
     text: 'A sizzling chocolate classic with a scoop of vanilla.',
   },
   {
-    img: '/images/menu/latte.jpg',
+    img: '/images/menu/latte.webp',
     tag: 'Slow-Poured',
     title: 'Velvet Latte',
     text: 'Steamed milk and silky espresso — a calm pause in the garden.',
@@ -95,12 +95,12 @@ export const FEATURES = [
 ]
 
 export const GALLERY = [
-  { src: '/images/ambience1.jpg', caption: 'Garden Walkway', span: true },
-  { src: '/images/entrance1.jpg', caption: 'Portuguese Entrance' },
-  { src: '/images/cafe2.jpg', caption: 'Night Courtyard' },
-  { src: '/images/entrance2.jpg', caption: 'Green Gates Entry' },
+  { src: '/images/ambience1.webp', caption: 'Garden Walkway', span: true },
+  { src: '/images/entrance1.webp', caption: 'Portuguese Entrance' },
+  { src: '/images/cafe2.webp', caption: 'Night Courtyard' },
+  { src: '/images/entrance2.webp', caption: 'Green Gates Entry' },
   { src: '/images/yappe-green-gates-2.webp', caption: 'Café Corner' },
-  { src: '/images/ambience2.jpg', caption: 'Garden Seating', span: true },
+  { src: '/images/ambience2.webp', caption: 'Garden Seating', span: true },
   { src: '/images/yappe-green-gates.webp', caption: 'Green Gates Café' },
 ]
 
